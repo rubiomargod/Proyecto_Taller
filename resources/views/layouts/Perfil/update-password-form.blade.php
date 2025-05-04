@@ -145,7 +145,7 @@
       {{-- Botón de Guardar --}}
       {{-- Usando nuestra clase personalizada btn-custom-primary y añadiendo icono --}}
       <button type="submit" class="btn btn-custom-primary">
-        <i class="bi bi-check me-2"></i> {{-- Icono de checkmark con margen a la derecha --}}
+
         {{ __('Guardar') }}
       </button>
 

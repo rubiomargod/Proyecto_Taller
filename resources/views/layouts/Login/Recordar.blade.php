@@ -1,7 +1,6 @@
 @extends('Guest')
 @section('title','Login')
 @section('body')
-<x-auth-session-status class="mb-4" :status="session('status')" />
 <div class="container mt-5 mb-5">
   <div class="row justify-content-center">
     {{-- Columna un poco más pequeña ya que el formulario es simple --}}

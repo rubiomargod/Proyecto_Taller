@@ -120,7 +120,6 @@
     {{-- Margen superior reducido de mt-4 a mt-3 y espacio reducido de gap-3 a gap-2 --}}
     <div class="d-flex align-items-center gap-2 mt-3">
       <button type="submit" class="btn btn-custom-primary">
-        <i class="bi bi-check me-2"></i>
         {{ __('Guardar') }}
       </button>
 

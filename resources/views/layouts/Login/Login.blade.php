@@ -2,8 +2,6 @@
 @section('title','Login')
 @section('body')
 <!-- Session Status -->
-<x-auth-session-status class="mb-4" :status="session('status')" />
-
 <div class="container mt-5 mb-5">
   <div class="row justify-content-center">
     <div class="col-md-8 col-lg-6">
