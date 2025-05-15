@@ -27,6 +27,13 @@
             Mecanicos
           </a>
         </li>
+        <li class="nav-item">
+          <a class="nav-link @if(request()->routeIs('PIEZAS')) active text-color-s @endif"
+            @if(request()->routeIs('PIEZAS')) aria-current="page" @endif
+            href="{{ route('PIEZAS') }}">
+            Piezas
+          </a>
+        </li>
       </ul>
       <ul class="navbar-nav">
         <li class="nav-item dropdown">

@@ -4,12 +4,14 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Maquinas extends Model
+class Piezas extends Model
 {
   protected $fillable = [
-    'marca',
-    'modelo',
-    'numero_serie',
+    'nombre',
+    'codigo',
     'descripcion',
+    'cantidad',
+    'precio_unitario',
+    'marca',
   ];
 }

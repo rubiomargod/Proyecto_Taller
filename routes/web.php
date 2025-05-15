@@ -23,6 +23,10 @@ Route::get('/Mecanicos', function () {
   return view('Layouts.Mecanicos.Mecanicos');
 })->middleware(['auth', 'verified'])->name('MECANICOS');
 
+Route::get('/Piezas', function () {
+  return view('Layouts.Piezas.Piezas');
+})->middleware(['auth', 'verified'])->name('PIEZAS');
+
 Route::middleware('auth')->group(function () {
   Route::get('/Perfil', [ProfileController::class, 'edit'])->name('profile.edit');
   Route::patch('/Perfil', [ProfileController::class, 'update'])->name('profile.update');

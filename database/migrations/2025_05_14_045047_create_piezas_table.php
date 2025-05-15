@@ -11,20 +11,23 @@ return new class extends Migration
    */
   public function up()
   {
-    Schema::create('maquinas', function (Blueprint $table) {
+    Schema::create('piezas', function (Blueprint $table) {
       $table->id();
+      $table->string('codigo')->unique();
+      $table->string('nombre');
       $table->string('marca')->nullable();
-      $table->string('modelo')->nullable();
-      $table->string('numero_serie')->unique();
       $table->text('descripcion')->nullable();
+      $table->integer('cantidad')->default(0);
+      $table->decimal('precio_unitario', 10, 2)->nullable();
       $table->timestamps();
     });
   }
+
   /**
    * Reverse the migrations.
    */
   public function down(): void
   {
-    Schema::dropIfExists('maquinas');
+    Schema::dropIfExists('piezas');
   }
 };
