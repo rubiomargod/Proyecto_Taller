@@ -113,5 +113,6 @@ class LMaquinas extends Component
   {
     $this->reset(['maquina_id', 'marca', 'modelo', 'numero_serie']);
     $this->dispatch('CerrarBorrarMaquina');
+    return redirect()->route('MAQUINAS')->with('success', 'Cancelado Correctamente');
   }
 }
