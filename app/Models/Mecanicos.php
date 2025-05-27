@@ -6,8 +6,6 @@ use Illuminate\Database\Eloquent\Model;
 
 class Mecanicos extends Model
 {
-  protected $primaryKey = 'idMecanico';
-
   protected $fillable = [
     'nombres',
     'apellidos',

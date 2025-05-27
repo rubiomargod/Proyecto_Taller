@@ -7,6 +7,13 @@
     <div class="collapse navbar-collapse" id="navbarNavDropdown">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item">
+          <a class="nav-link @if(request()->routeIs('INICIO')) active text-color-s @endif"
+            @if(request()->routeIs('INICIO')) aria-current="page" @endif
+            href="{{ route('INICIO') }}">
+            Inicio
+          </a>
+        </li>
+        <li class="nav-item">
           <a class="nav-link @if(request()->routeIs('MANTENIMIENTOS')) active text-color-s @endif"
             @if(request()->routeIs('MANTENIMIENTOS')) aria-current="page" @endif
             href="{{ route('MANTENIMIENTOS') }}">

@@ -8,7 +8,7 @@ Route::get('/', function () {
 });
 
 Route::get('/Inicio', function () {
-  return view('App');
+  return view('Layouts.Inicio.Inicio');
 })->middleware(['auth', 'verified'])->name('INICIO');
 
 Route::get('/Mantenimientos', function () {

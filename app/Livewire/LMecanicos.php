@@ -42,7 +42,6 @@ class LMecanicos extends Component
     $this->accion = "";
     $this->reset();
     $this->dispatch('CerrarNuevoMecanico');
-    return redirect()->route('MECANICOS')->with('success', 'Cancelado Correctamente');
   }
   public function Guardar()
   {
@@ -65,7 +64,7 @@ class LMecanicos extends Component
   public function AbrirEditar($IDMecanico)
   {
     $mecanico = Mecanicos::findOrFail($IDMecanico);
-    $this->idMecanicoSeleccionado = $mecanico->idMecanico;
+    $this->idMecanicoSeleccionado = $mecanico->id;
     $this->nombres = $mecanico->nombres;
     $this->apellidos = $mecanico->apellidos;
     $this->correo = $mecanico->correo;
@@ -81,14 +80,13 @@ class LMecanicos extends Component
     $this->accion = "";
     $this->reset();
     $this->dispatch('CerrarNuevoMecanico');
-    return redirect()->route('MECANICOS')->with('success', 'Cancelado Correctamente');
   }
   public function Editar()
   {
     $this->validate([
       'nombres' => 'required|string|max:255',
       'apellidos' => 'required|string|max:255',
-      'correo' => 'required|email|unique:mecanicos,correo,' . $this->idMecanicoSeleccionado . ',idMecanico',
+      'correo' => 'required|email|unique:mecanicos,correo,' . $this->idMecanicoSeleccionado . ',id',
       'telefono' => 'required',
       'direccion' => 'required',
       'ine' => 'required|string|max:255',
@@ -115,7 +113,7 @@ class LMecanicos extends Component
   public function AbrirBorrar($IDMecanico)
   {
     $mecanico = Mecanicos::findOrFail($IDMecanico);
-    $this->idMecanicoSeleccionado = $mecanico->idMecanico;
+    $this->idMecanicoSeleccionado = $mecanico->id;
     $this->nombres = $mecanico->nombres;
     $this->apellidos = $mecanico->apellidos;
     $this->correo = $mecanico->correo;

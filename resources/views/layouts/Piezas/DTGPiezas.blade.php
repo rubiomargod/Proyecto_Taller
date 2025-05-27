@@ -59,51 +59,49 @@
     /* Espacio entre botones */
   }
 </style>
-
 <div class="container mt-4">
   <div class="row justify-content-center">
     <div class="col-md-10">
       <div class="card">
         <h1 class="card-header bg-light text-center text-dark-custom">
-          Mecanicos
+          Piezaes
         </h1>
         <div class="card-body">
           <div class="table-responsive">
             <table class="table table-striped-custom table-bordered-custom align-middle">
               <thead class="table-header-custom">
                 <tr>
-                  <th>Nombres</th>
-                  <th>Apellidos</th>
-                  <th>Correo</th>
-                  <th>Teléfono</th>
-                  <th>Dirección</th>
-                  <th>INE</th>
-                  <th>Estatus</th>
+                  <th>Nombre</th>
+                  <th>Código</th>
+                  <th>Descripción</th>
+                  <th>Cantidad</th>
+                  <th>Precio Unitario</th>
+                  <th>Marca</th>
                   <th>Acciones</th>
                 </tr>
               </thead>
-              @foreach($Mecanicos as $Mecanico)
+              @foreach($Piezas as $Pieza)
               <tbody>
                 <tr>
-                  <td>{{$Mecanico->nombres}}</td>
-                  <td>{{$Mecanico->apellidos}}</td>
-                  <td>{{$Mecanico->correo}}</td>
-                  <td>{{$Mecanico->telefono}}</td>
-                  <td>{{$Mecanico->direccion}}</td>
-                  <td>{{$Mecanico->ine}}</td>
-                  <td>{{$Mecanico->estatus}}</td>
+                  <td>{{ $Pieza->nombre }}</td>
+                  <td>{{ $Pieza->codigo }}</td>
+                  <td>{{ $Pieza->descripcion }}</td>
+                  <td>{{ $Pieza->cantidad }}</td>
+                  <td>${{ number_format($Pieza->precio_unitario, 2) }}</td>
+                  <td>{{ $Pieza->marca }}</td>
                   <td>
                     <div class="d-flex justify-content-center gap-1">
-                      <button class="btn btn-primary btn-sm" wire:click="AbrirEditar({{$Mecanico->id}})">
+                      <button class="btn btn-primary btn-sm" wire:click="AbrirEditar({{ $Pieza->id }})">
                         <i class="bi bi-pencil"></i>
                       </button>
-                      <button class="btn btn-danger btn-sm" wire:click="AbrirBorrar({{$Mecanico->id}})">
+                      <button class="btn btn-danger btn-sm" wire:click="AbrirBorrarPieza({{ $Pieza->id }})">
                         <i class="bi bi-trash"></i>
                       </button>
                     </div>
                   </td>
                 </tr>
-                @endforeach
+              </tbody>
+              @endforeach
             </table>
           </div>
         </div>
