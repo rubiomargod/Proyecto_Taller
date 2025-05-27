@@ -33,6 +33,7 @@ class LMaquinas extends Component
     $this->Accion = "";
     $this->reset();
     $this->dispatch('CerrarNuevaMaquina');
+    return redirect()->route('MAQUINAS')->with('success', 'Cancelado Correctamente');
   }
   public function Guardar()
   {
@@ -104,6 +105,7 @@ class LMaquinas extends Component
   {
     $maquina = Maquinas::findOrFail($id);
     $maquina->delete();
+
     $this->dispatch('CerrarBorrarMaquina');
     return redirect()->route('MAQUINAS')->with('success', 'Maquina Eliminada Corectamente');
   }
@@ -111,6 +113,6 @@ class LMaquinas extends Component
   {
     $this->reset(['maquina_id', 'marca', 'modelo', 'numero_serie']);
     $this->dispatch('CerrarBorrarMaquina');
-    return redirect()->route('MAQUINAS')->with('success', 'Cancelado Corectamente');
+    return redirect()->route('MAQUINAS')->with('success', 'Cancelado Correctamente');
   }
 }
